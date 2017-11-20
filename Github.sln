@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Github", "Github\Github.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportViewer", "ReportViewer\ReportViewer.csproj", "{7C591F34-8686-41F2-B742-44766E1D8526}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UoW", "UoW\UoW.csproj", "{5ACDDFE2-DDF9-4537-8AE8-0D08FB867516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7C591F34-8686-41F2-B742-44766E1D8526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C591F34-8686-41F2-B742-44766E1D8526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C591F34-8686-41F2-B742-44766E1D8526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACDDFE2-DDF9-4537-8AE8-0D08FB867516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACDDFE2-DDF9-4537-8AE8-0D08FB867516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACDDFE2-DDF9-4537-8AE8-0D08FB867516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACDDFE2-DDF9-4537-8AE8-0D08FB867516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

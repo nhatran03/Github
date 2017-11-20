@@ -264,6 +264,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -380,6 +381,12 @@
     <EmbeddedResource Include="Migrations\201709270443340_AddAttendance1.resx">
       <DependentUpon>201709270443340_AddAttendance1.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UoW\UoW.csproj">
+      <Project>{5acddfe2-ddf9-4537-8ae8-0d08fb867516}</Project>
+      <Name>UoW</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
