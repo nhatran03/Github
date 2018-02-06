@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using UoW;
 
 namespace UoW
 {
-    interface IEntity
+    public interface IEntity
     {
         int Id { get; set; }
         void Insert();
