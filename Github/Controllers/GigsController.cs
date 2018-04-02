@@ -1,19 +1,29 @@
 ﻿using Github.Models;
 using Github.ViewModels;
 using Microsoft.AspNet.Identity;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Github.Controllers
 {
-    public class GigsController : Controller
+	public class GigsController : Controller
     {
         private readonly ApplicationDbContext context;
         
         public GigsController() {
             context = new ApplicationDbContext();
         }
-        // GET: Gigs
+
+	    public ActionResult Mine()
+	    {
+		    var userId = User.Identity.GetUserId();
+		    var gis = context.Gig.Where(g => g.ArtistId == userId && g.Datetime > DateTime.Now)
+			    .ToList();
+		    return View("");
+	    }
+
+	    // GET: Gigs
         [Authorize]
         public ActionResult Create()
         {
