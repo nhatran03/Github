@@ -22,6 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+span.field-validation-error {
+    color: red;
+    font-weight: 700;
+}
 
 /*Bootstrap overrides*/
 .navbar-inverse {
@@ -74,12 +78,12 @@ h6,
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin: 20px 15px;
     
 }
 .form-control {
-    font-size: 3px;
-    padding: 20px 15px;
+    
+    padding: 0px 15px;
     -ms-border-radius: 9px;
     border-radius: 9px;
 }
@@ -94,3 +98,4 @@ h6,
     -ms-border-radius: 9px;
     border-radius: 9px;
 }
+
