@@ -99,3 +99,33 @@ h6,
     border-radius: 9px;
 }
 
+.gigs {
+    list-style: none;
+
+}
+
+.gigs > li {
+
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.gigs > li .date {
+    background: red;
+    color: white;
+    text-align: center;
+    width: 60px;
+}
+
+.gigs > li .date .month {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.gigs > li .details {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+}
+

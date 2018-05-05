@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Github.Controllers
 {
-    public class HomeController : Controller
+	public class HomeController : Controller
     {
         private ApplicationDbContext _context;
 
@@ -18,6 +18,7 @@ namespace Github.Controllers
         {
             var upcomingGigs = _context.Gig
                 .Include(g => g.Artist)
+				.Include(g => g.Genre)
                 .Where(g => g.Datetime > DateTime.Now);
             return View(upcomingGigs);
         }
