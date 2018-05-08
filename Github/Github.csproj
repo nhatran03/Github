@@ -224,6 +224,15 @@
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataAccessRepository\IRepository.cs" />
+    <Compile Include="DataAccessRepository\IRepositoryOfTEntity.cs" />
+    <Compile Include="DataAccessRepository\IRepositoryOfTEntityAndTPrimaryKey.cs" />
+    <Compile Include="Dependency\ITransientDependency.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\IEntityOfTPrimaryKey.cs" />
+    <Compile Include="Entities\IMayHaveTenant.cs" />
+    <Compile Include="Entities\IMustHaveTenant.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
