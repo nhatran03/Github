@@ -13,15 +13,39 @@
                     @gig.Datetime.ToString("MMM")
                 </div>
                 <div class="day">
-                    @gig.Datetime.ToString("d")
+                    @gig.Datetime.ToString("d ")
                 </div>
             </div>
             <div class="details">
-                @gig.Artist.Name
+                <span class="artist">
+                    @gig.Artist.Name
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+                <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendence">Going ?</button>
             </div>
-            <span class="genre">
-                @gig.Genre.Name
-            </span>
+            
         </li>
     }
 </ul>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".js-toggle-attendence").click(function() {
+                var button = $(e.target);
+                $.post("/api/attendances", button.attr("data-gig-id"))
+                    .done(function() {
+                        button.removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function() {
+                        alert("Something wrong!");
+                });
+            });
+        });
+    </script>
+}
