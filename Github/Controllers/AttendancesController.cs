@@ -18,10 +18,9 @@ namespace Github.Controllers
         public IHttpActionResult Attend([FromBody] int gigid)
         {
 			var userId = User.Identity.GetUserId();
-			var exists = _context.Attendances.Any(a => a.AttendaneeId == userId
-				&& a.GigId == gigid);
 
-			if (exists)
+	        if (_context.Attendances.Any(a => a.AttendaneeId == userId
+			                                  && a.GigId == gigid))
 			{
 				return BadRequest("The Acctendance already exists.");
 			}
