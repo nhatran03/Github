@@ -7,7 +7,4 @@ namespace Github.DataAccessRepository
 
 	}
 
-	public interface IRepository<TEntity, T> where TEntity : class, IEntity<int>
-	{
-	}
 }

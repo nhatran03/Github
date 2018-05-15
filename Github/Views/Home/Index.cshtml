@@ -17,11 +17,14 @@
                 </div>
             </div>
             <div class="details">
-                @gig.Artist.Name
+                <span>
+                    @gig.Artist.Name
+                </span>                
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
             </div>
-            <span class="genre">
-                @gig.Genre.Name
-            </span>
+            
         </li>
     }
 </ul>

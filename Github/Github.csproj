@@ -224,6 +224,8 @@
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataAccessRepository\clsDataAccessRepository.cs" />
+    <Compile Include="DataAccessRepository\IDataAccessRepository.cs" />
     <Compile Include="DataAccessRepository\IRepository.cs" />
     <Compile Include="DataAccessRepository\IRepositoryOfTEntity.cs" />
     <Compile Include="DataAccessRepository\IRepositoryOfTEntityAndTPrimaryKey.cs" />
