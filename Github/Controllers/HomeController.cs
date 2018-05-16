@@ -20,7 +20,14 @@ namespace Github.Controllers
                 .Include(g => g.Artist)
 				.Include(g => g.Genre)
                 .Where(g => g.Datetime > DateTime.Now);
-            return View(upcomingGigs);
+
+	        var viewModel = new GigsViewModel
+	        {
+		        UpcomingGigs = upcomingGigs,
+		        ShowActions = User.Identity.IsAuthenticated,
+				Heading = "Upcoming Gigs"
+	        };
+            return View("Gigs",viewModel);
         }
 
         public ActionResult About()

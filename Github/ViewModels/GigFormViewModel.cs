@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Github.ViewModels
 {
-    public class GigFormViewModel
+	public class GigFormViewModel
     {
         [Required]
         public string Vanue { get; set; }
 
         [Required]
-        [FutureDate]
+        
         public string Date { get; set; }
 
         [Required]

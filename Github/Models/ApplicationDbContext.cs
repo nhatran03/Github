@@ -3,12 +3,14 @@ using System.Data.Entity;
 
 namespace Github.Models
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Gig> Gig { get; set; }
         public DbSet<Genre> Genre { get; set; }
 
         public DbSet<Attendance> Attendances { get; set; }
+
+		public DbSet<Following> Followings { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -25,6 +27,15 @@ namespace Github.Models
                 .HasRequired(a => a.Gig)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+			modelBuilder.Entity<ApplicationUser>()
+				.HasMany(u => u.Followers)
+				.WithRequired(u => u.Followee)
+				.WillCascadeOnDelete(false);
+			modelBuilder.Entity<ApplicationUser>()
+				.HasMany(u => u.Followees)
+				.WithRequired(u => u.Follower)
+				.WillCascadeOnDelete(false);
+				
             base.OnModelCreating(modelBuilder);
         }
     }

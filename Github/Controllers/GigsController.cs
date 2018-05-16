@@ -2,6 +2,7 @@
 using Github.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,6 +16,27 @@ namespace Github.Controllers
             context = new ApplicationDbContext();
         }
 
+		[Authorize]
+	    public ActionResult Attending()
+	    {
+		    var userId = User.Identity.GetUserId();
+		    var gigs = context.Attendances
+				.Where(x => x.AttendaneeId == userId)
+			    .Select(x => x.Gig)
+				.Include(g => g.Artist)
+				.Include(g => g.Genre)
+			    .ToList();
+
+		    var viewModel = new GigsViewModel
+		    {
+			    UpcomingGigs = gigs,
+			    ShowActions = User.Identity.IsAuthenticated,
+				Heading = "Gigs I'm Attending"
+		    };
+
+		    return View("Gigs",viewModel);
+	    }
+
 	    public ActionResult Mine()
 	    {
 		    var userId = User.Identity.GetUserId();
@@ -23,17 +45,17 @@ namespace Github.Controllers
 		    return View("");
 	    }
 
-	    // GET: Gigs
-        [Authorize]
-        public ActionResult Create()
-        {
-            var viewmodel = new GigFormViewModel
-            {
-                Genres = context.Genre.ToList()
-            };
-            return View(viewmodel);
-        }
-        [Authorize]
+		// GET: Gigs
+		[Authorize]
+		public ActionResult Create()
+		{
+			var viewmodel = new GigFormViewModel
+			{
+				Genres = context.Genre.ToList()
+			};
+			return View(viewmodel);
+		}
+		[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewmodel) {

@@ -1,0 +1,12 @@
+﻿using Github.Models;
+using System.Collections.Generic;
+
+namespace Github.Controllers
+{
+	public class GigsViewModel
+	{
+		public IEnumerable<Gig> UpcomingGigs { get; set; }
+		public bool ShowActions { get; set; }
+		public string Heading { get; set; }
+	}
+}

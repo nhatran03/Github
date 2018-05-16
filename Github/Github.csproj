@@ -221,8 +221,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DataAccessRepository\clsDataAccessRepository.cs" />
     <Compile Include="DataAccessRepository\IDataAccessRepository.cs" />
@@ -230,6 +232,8 @@
     <Compile Include="DataAccessRepository\IRepositoryOfTEntity.cs" />
     <Compile Include="DataAccessRepository\IRepositoryOfTEntityAndTPrimaryKey.cs" />
     <Compile Include="Dependency\ITransientDependency.cs" />
+    <Compile Include="Dtos\AttendanceDto.cs" />
+    <Compile Include="Dtos\FollowingDto.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IEntityOfTPrimaryKey.cs" />
@@ -282,11 +286,16 @@
     <Compile Include="Migrations\201709270443340_AddAttendance1.Designer.cs">
       <DependentUpon>201709270443340_AddAttendance1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805161949597_AddFollowing.cs" />
+    <Compile Include="Migrations\201805161949597_AddFollowing.Designer.cs">
+      <DependentUpon>201805161949597_AddFollowing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Following.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -338,7 +347,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Gigs.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -405,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709270443340_AddAttendance1.resx">
       <DependentUpon>201709270443340_AddAttendance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805161949597_AddFollowing.resx">
+      <DependentUpon>201805161949597_AddFollowing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

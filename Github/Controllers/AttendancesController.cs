@@ -1,4 +1,5 @@
-﻿using Github.Models;
+﻿using Github.Dtos;
+using Github.Models;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Http;
@@ -15,19 +16,19 @@ namespace Github.Controllers
             _context = new ApplicationDbContext();
         }
         [HttpPost]
-        public IHttpActionResult Attend([FromBody] int gigid)
+        public IHttpActionResult Attend(AttendanceDto dto)
         {
 			var userId = User.Identity.GetUserId();
 
 	        if (_context.Attendances.Any(a => a.AttendaneeId == userId
-			                                  && a.GigId == gigid))
+			                                  && a.GigId == dto.GigId))
 			{
 				return BadRequest("The Acctendance already exists.");
 			}
 
             var attendance = new Attendance
             {
-                GigId = gigid,
+                GigId = dto.GigId,
                 AttendaneeId = userId
             };
             _context.Attendances.Add(attendance);
