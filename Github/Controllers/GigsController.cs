@@ -15,6 +15,17 @@ namespace Github.Controllers
         public GigsController() {
             context = new ApplicationDbContext();
         }
+		[Authorize]
+	    public ActionResult Mine()
+		{
+			var userId = User.Identity.GetUserId();
+			var gigs = context.Gig
+				.Where(g => g.ArtistId == userId && g.Datetime > DateTime.Now)
+				.Include(g => g.Genre)
+				.ToList();
+
+			return View(gigs);
+		}
 
 		[Authorize]
 	    public ActionResult Attending()
@@ -35,14 +46,6 @@ namespace Github.Controllers
 		    };
 
 		    return View("Gigs",viewModel);
-	    }
-
-	    public ActionResult Mine()
-	    {
-		    var userId = User.Identity.GetUserId();
-		    var gis = context.Gig.Where(g => g.ArtistId == userId && g.Datetime > DateTime.Now)
-			    .ToList();
-		    return View("");
 	    }
 
 		// GET: Gigs
@@ -74,7 +77,7 @@ namespace Github.Controllers
             context.Gig.Add(gig);
             context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Mine", "Gigs");
         }
     }
 }
