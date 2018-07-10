@@ -224,21 +224,18 @@
     <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Management\ContextFactory.cs" />
+    <Compile Include="Data\Management\IContextFactory.cs" />
+    <Compile Include="Data\Management\IRepository.cs" />
+    <Compile Include="Data\Management\IUnitOfWork.cs" />
+    <Compile Include="Data\Management\Repository.cs" />
     <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DataAccessRepository\clsDataAccessRepository.cs" />
+    <Compile Include="DataAccessRepository\DataAccessRepository.cs" />
     <Compile Include="DataAccessRepository\IDataAccessRepository.cs" />
-    <Compile Include="DataAccessRepository\IRepository.cs" />
-    <Compile Include="DataAccessRepository\IRepositoryOfTEntity.cs" />
-    <Compile Include="DataAccessRepository\IRepositoryOfTEntityAndTPrimaryKey.cs" />
     <Compile Include="Dependency\ITransientDependency.cs" />
     <Compile Include="Dtos\AttendanceDto.cs" />
     <Compile Include="Dtos\FollowingDto.cs" />
-    <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\IEntityOfTPrimaryKey.cs" />
-    <Compile Include="Entities\IMayHaveTenant.cs" />
-    <Compile Include="Entities\IMustHaveTenant.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -371,7 +368,9 @@
     <Content Include="Views\Gigs\Create.cshtml" />
     <Content Include="Views\Gigs\Mine.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

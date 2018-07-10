@@ -3,7 +3,7 @@ using System;
 
 namespace Github.DataAccessRepository
 {
-	public class clsDataAccessRepository : IDataAccessRepository<Customer, int>
+	public class DataAccessRepository : IDataAccessRepository<Customer, int>
 	{
 		
 		public ApplicationDbContext context { get; set; }
